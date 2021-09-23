@@ -5,3 +5,4 @@ emoji
 requests
 chardet==3.*
 psycopg2
+igdb-api-v4

@@ -13,17 +13,17 @@ import copy
 
 try:
     from secure import post_bot
-    id_canal = post_bot.id_canal
-    API_TOKEN = post_bot.API_TOKEN
-    support = post_bot.support
-    dbaddress = post_bot.dbaddress
-    twitch_client_id = post_bot.twitch_client_id
-    twitch_client_secret = post_bot.twitch_client_secret
+    id_canal ='@Wonder_land_Majaria'
+    API_TOKEN = '1780518008:AAHKl_RsLFwVXLpeGLYc9CtFe9u_vUz2Dxg'
+    support = '@Wonder_land_Majaria'
+    dbaddress = 'https://github.com/Squall212/Haibara-Ai'
+    twitch_client_id = 'ohvptupr2fbktp7m40q5tzgvn0izb2'
+    twitch_client_secret = 'd3bioj3pwsqp9cmrny5zb3io1m9xki'
 except:
     import os
-    id_canal = os.getenv('ID_CANAL')
+    id_canal = os.getenv('id_canal')
     API_TOKEN = os.getenv('TOKEN')
-    support = os.getenv('SUPPORT')
+    support = os.getenv('support')
     dbaddress = os.getenv('DATABASE_URL')
     twitch_client_id = os.getenv('TWITCH_CLIENT_ID')
     twitch_client_secret = os.getenv('TWITCH_CLIENT_SECRET')
@@ -33,7 +33,7 @@ import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
-vn = VNDB('darkness_posting_bot', '0.1')
+vn = VNDB('Ruthless_asistant_bot', '0.1')
 db = DBHelper(dbaddress)
 
 if twitch_client_id and twitch_client_secret:
@@ -63,7 +63,7 @@ t_i = icono(
 t_ty = icono(
     ':white_check_mark: Seleccione la categoría en que se encuentra la multimedia.')
 t_pre = icono(
-    'Hola {0} :wave:, este es un bot para ayudarte a publicar en el canal @{1}.\n\nPara comenzar presione :point_right: {2}')
+    'Hola {0} :wave:, soy un bot diseñado para ayudarte con la publicacion dentro de nuestro canal S3 @{1}.\n\nPara comenzar presione :point_right: {2}')
 boton_cancelar = '/cancelar'
 boton_sigui = icono('Siguiente :next_track_button:')
 boton_selec = icono('Seleccionar :white_check_mark:')
