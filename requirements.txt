@@ -1,1 +1,7 @@
-python-telegram-bot
+ujson
+googletrans==4.0.0rc1
+pyTelegramBotAPI
+emoji
+requests
+chardet==3.*
+psycopg2
