@@ -11,22 +11,13 @@ from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, C
 from time import sleep
 import copy
 
-try:
-    from secure import post_bot
-    id_canal ='@Wonder_land_Majaria'
-    API_TOKEN = '1780518008:AAHKl_RsLFwVXLpeGLYc9CtFe9u_vUz2Dxg'
-    support = '@Wonder_land_Majaria'
-    dbaddress = 'https://github.com/Squall212/Haibara-Ai'
-    twitch_client_id = 'ohvptupr2fbktp7m40q5tzgvn0izb2'
-    twitch_client_secret = 'd3bioj3pwsqp9cmrny5zb3io1m9xki'
-except:
-    import os
-    id_canal = os.getenv('id_canal')
-    API_TOKEN = os.getenv('TOKEN')
-    support = os.getenv('support')
-    dbaddress = os.getenv('DATABASE_URL')
-    twitch_client_id = os.getenv('TWITCH_CLIENT_ID')
-    twitch_client_secret = os.getenv('TWITCH_CLIENT_SECRET')
+from secure import post_bot
+id_canal ='@Wonder_land_Majaria'
+API_TOKEN = '1780518008:AAHKl_RsLFwVXLpeGLYc9CtFe9u_vUz2Dxg'
+support = '@Wonder_land_Majaria'
+dbaddress = 'https://github.com/Squall212/Haibara-Ai'
+twitch_client_id = 'ohvptupr2fbktp7m40q5tzgvn0izb2'
+twitch_client_secret = 'd3bioj3pwsqp9cmrny5zb3io1m9xki'
 
 
 import logging
