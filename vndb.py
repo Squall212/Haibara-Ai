@@ -1,3 +1,19 @@
+"""
+	@author: HarHar (https://github.com/HarHar)
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    py3 conversion by RathHunt (https://github.com/RathHunt)
+"""
 import socket
 try:
     import ujson as json
@@ -42,6 +58,7 @@ class VNDB(object):
 
     def get(self, type, flags, filters, options):
         """ Gets a VN/producer
+
         Example:
         >>> results = vndb.get('vn', 'basic', '(title="Clannad")', '')
         >>> results['items'][0]['image']
@@ -55,6 +72,7 @@ class VNDB(object):
 
     def sendCommand(self, command, args=None):
         """ Sends a command
+
         Example
         >>> self.sendCommand('test', {'this is an': 'argument'})
         """
@@ -69,6 +87,7 @@ class VNDB(object):
 
     def getResponse(self):
         """ Returns a tuple of the response to a command that was previously sent
+
         Example
         >>> self.sendCommand('test')
         >>> self.getResponse()
@@ -89,6 +108,7 @@ class VNDB(object):
 
     def getRawResponse(self):
         """ Returns a raw response to a command that was previously sent
+
         Example:
         >>> self.sendCommand('test')
         >>> self.getRawResponse()

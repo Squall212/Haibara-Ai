@@ -11,20 +11,29 @@ from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, C
 from time import sleep
 import copy
 
-from secure import post_bot
-id_canal ='@Wonder_land_Majaria'
-API_TOKEN = '1780518008:AAHKl_RsLFwVXLpeGLYc9CtFe9u_vUz2Dxg'
-support = '@Wonder_land_Majaria'
-dbaddress = 'https://github.com/Squall212/Haibara-Ai'
-twitch_client_id = 'ohvptupr2fbktp7m40q5tzgvn0izb2'
-twitch_client_secret = 'd3bioj3pwsqp9cmrny5zb3io1m9xki'
+try:
+    from secure import post_bot
+    id_canal = post_bot.id_canal
+    API_TOKEN = post_bot.API_TOKEN
+    support = post_bot.support
+    dbaddress = post_bot.dbaddress
+    twitch_client_id = post_bot.twitch_client_id
+    twitch_client_secret = post_bot.twitch_client_secret
+except:
+    import os
+    id_canal = os.getenv('ID_CANAL')
+    API_TOKEN = os.getenv('TOKEN')
+    support = os.getenv('SUPPORT')
+    dbaddress = os.getenv('DATABASE_URL')
+    twitch_client_id = os.getenv('TWITCH_CLIENT_ID')
+    twitch_client_secret = os.getenv('TWITCH_CLIENT_SECRET')
 
 
 import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
-vn = VNDB('Ruthless_asistant_bot', '0.1')
+vn = VNDB('darkness_posting_bot', '0.1')
 db = DBHelper(dbaddress)
 
 if twitch_client_id and twitch_client_secret:
@@ -54,7 +63,7 @@ t_i = icono(
 t_ty = icono(
     ':white_check_mark: Seleccione la categoría en que se encuentra la multimedia.')
 t_pre = icono(
-    'Hola {0} :wave:, soy un bot diseñado para ayudarte con la publicacion dentro de nuestro canal S3 @{1}.\n\nPara comenzar presione :point_right: {2}')
+    'Hola {0} :wave:, este es un bot para ayudarte a publicar en el canal @{1}.\n\nPara comenzar presione :point_right: {2}')
 boton_cancelar = '/cancelar'
 boton_sigui = icono('Siguiente :next_track_button:')
 boton_selec = icono('Seleccionar :white_check_mark:')
@@ -802,7 +811,7 @@ def callback_query(call: CallbackQuery):
                     elif data[1] == 'anonymity':
                         try:
                             sms = bot.send_message(
-                                call.from_user.id, ' Aunque la comunidad no lo vea, los admins y yo si, asi que mucho ojo, tantei-kun😶\n /si    /no')
+                                call.from_user.id, '😑 aunque la comunidad no lo vea, los admins si, no lo intentes usar para el mal\n /si    /no')
                         except:
                             print(traceback.format_exc())
                         bot.register_next_step_handler(

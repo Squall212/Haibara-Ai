@@ -4,5 +4,6 @@ pyTelegramBotAPI
 emoji
 requests
 chardet==3.*
+sqlalchemy
 psycopg2
 igdb-api-v4
